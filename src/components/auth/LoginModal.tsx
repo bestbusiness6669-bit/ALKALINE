@@ -35,7 +35,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
       onLoginSuccess(targetUser);
       onClose();
     } else {
-      setErrorMsg('Invalid Member ID / Email. Try test user WV100001 or Admin WV100000!');
+      setErrorMsg('Invalid Member ID / Email. Try test user ID: WV100001');
     }
   };
 
@@ -66,7 +66,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
           </div>
           <div>
             <h3 className="text-2xl font-black text-slate-900 dark:text-white">
-              Member Login
+              User Login
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400">
               Access your WEALTH VEDA income wallet & binary tree
@@ -74,30 +74,20 @@ export const LoginModal: React.FC<LoginModalProps> = ({
           </div>
         </div>
 
-        {/* 1-Click Sandbox Preset Logins for instant evaluation */}
+        {/* 1-Click Test User Login Preset */}
         <div className="bg-amber-500/10 border border-amber-500/30 p-3 rounded-2xl mb-6">
           <div className="text-xs font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5 mb-2">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>1-Click Test Login Presets:</span>
+            <span>1-Click Quick User Login:</span>
           </div>
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              type="button"
-              onClick={() => handleQuickPresetLogin('WV100001')}
-              className="px-3 py-2 rounded-xl bg-blue-900/80 hover:bg-blue-800 text-white text-xs font-bold border border-amber-500/30 flex items-center justify-center gap-1.5 transition-all"
-            >
-              <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>User (WV100001)</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickPresetLogin('WV100000')}
-              className="px-3 py-2 rounded-xl bg-slate-950 hover:bg-slate-800 text-amber-400 text-xs font-bold border border-amber-500/50 flex items-center justify-center gap-1.5 transition-all"
-            >
-              <ShieldAlert className="w-3.5 h-3.5 text-amber-400" />
-              <span>Admin Panel</span>
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => handleQuickPresetLogin('WV100001')}
+            className="w-full px-3 py-2.5 rounded-xl bg-blue-900/80 hover:bg-blue-800 text-white text-xs font-bold border border-amber-500/30 flex items-center justify-center gap-2 transition-all shadow-sm"
+          >
+            <UserCheck className="w-4 h-4 text-emerald-400" />
+            <span>User Login (ID: WV100001)</span>
+          </button>
         </div>
 
         {errorMsg && (
